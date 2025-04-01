@@ -1,0 +1,38 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 2 - DOM</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin-right: 10px; }
+    #charCount { margin-top: 5px; font-size: 0.9em; color: gray; }
+    #output p, #output ul, #output ol { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <h1>Interatividade com DOM</h1>
+
+  <h2>Contador de Cliques</h2>
+  <button id="btnInc">Incrementar</button>
+  <button id="btnDec">Decrementar</button>
+  <span id="contador">0</span>
+
+  <h2>Texto Dinâmico</h2>
+  <input type="text" id="campoTexto" placeholder="Digite algo e pressione Enter">
+  <div id="charCount">Caracteres (sem espaços): 0</div>
+
+  <h2>Adicionar novo item</h2>
+  <select id="tipoItem">
+    <option value="ul">Lista Não Ordenada</option>
+    <option value="ol">Lista Ordenada</option>
+  </select>
+  <button id="btnAddItem">Adicionar Item</button>
+
+  <h2>Conteúdo Gerado</h2>
+  <div id="output"></div>
+
+  <button id="btnReset">Resetar</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
