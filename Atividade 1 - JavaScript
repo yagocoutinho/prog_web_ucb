@@ -1,0 +1,74 @@
+// Atividade 1 - JavaScript
+
+// 1 - Jogo de adivinhação do número secreto
+function jogoAdivinhacao() {
+  const numeroSecreto = Math.floor(Math.random() * 20) + 1;
+  let tentativa;
+  do {
+    tentativa = parseInt(prompt("Adivinhe o número entre 1 e 20:"));
+    if (tentativa < numeroSecreto) {
+      console.log("Muito baixo!");
+    } else if (tentativa > numeroSecreto) {
+      console.log("Muito alto!");
+    } else {
+      console.log("Parabéns! Você acertou!");
+    }
+  } while (tentativa !== numeroSecreto);
+}
+
+// 2 - Jogo de Pedra, Papel ou Tesoura
+function pedraPapelTesoura() {
+  const opcoes = ["pedra", "papel", "tesoura"];
+  const usuario = prompt("Escolha: pedra, papel ou tesoura:").toLowerCase();
+  const computador = opcoes[Math.floor(Math.random() * 3)];
+
+  console.log(`Computador escolheu: ${computador}`);
+
+  if (usuario === computador) {
+    console.log("Empate!");
+  } else if (
+    (usuario === "pedra" && computador === "tesoura") ||
+    (usuario === "papel" && computador === "pedra") ||
+    (usuario === "tesoura" && computador === "papel")
+  ) {
+    console.log("Você ganhou!");
+  } else {
+    console.log("Computador ganhou!");
+  }
+}
+
+// 3 - Tabuada de um número
+function tabuada() {
+  const numero = parseInt(prompt("Digite um número para ver sua tabuada:"));
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${numero} x ${i} = ${numero * i}`);
+  }
+}
+
+// 4 - Triângulo de asteriscos
+function trianguloAsteriscos() {
+  const linhas = parseInt(prompt("Digite o número de linhas para o triângulo:"));
+  let linha = "";
+  for (let i = 1; i <= linhas; i++) {
+    linha += "*";
+    console.log(linha);
+  }
+}
+
+// 5 - Soma da série 1 + 11 + 111 + ... até n termos
+function somaSerie() {
+  const termos = parseInt(prompt("Digite a quantidade de termos da série:"));
+  let valor = 0;
+  let termo = "";
+  let expressao = "";
+
+  for (let i = 1; i <= termos; i++) {
+    termo += "1";
+    valor += parseInt(termo);
+    expressao += termo;
+    if (i < termos) expressao += " + ";
+  }
+
+  console.log(expressao);
+  console.log(`A soma é: ${valor}`);
+}
